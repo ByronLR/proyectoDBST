@@ -1,0 +1,533 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Reset */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Main Styling */
+html,
+body {
+  
+  color: #fff;
+  height: 100vh;
+  /*display: flex;*/
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {font-size: 2.441rem;}
+h2 {font-size: 1.953rem;}
+h3 {font-size: 1.563rem;}
+h4 {font-size: 1.25rem;}
+
+h1,
+h2,
+h3,
+h4 {
+  text-transform: capitalize;
+}
+
+p {
+  font-size: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: #4d4d4d;
+}
+
+hr {
+  background: #fda94f;
+  height: 20px;
+  border: none;
+}
+
+/* Utility Classes */
+.container {
+  margin: auto;
+  max-width: 1100px;
+  overflow: auto;
+  padding: 0 20px;
+}
+
+.btn {
+  display: inline-block;
+  font-size: 18px;
+  color: #fff;
+  padding: 13px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-light {
+  background: #fda94f;
+}
+
+.btn-dark {
+  background: #4d4d4d;
+}
+
+.btn-light:hover {
+  background: #fec281;
+}
+
+.btn-dark:hover {
+  background: #737373;
+}
+
+.py-80 {padding: 80px 0;}
+.py-50 {padding: 50px 0;}
+.py-30 {padding: 30px 0;}
+
+.box {
+  float: left;
+  width: 33.3%;
+  text-align: center;
+  padding: 50px;
+  height: 300px;
+}
+
+.box h4 {
+  padding-bottom: 20px;
+  text-transform: uppercase;
+}
+
+
+
+.clr {
+  clear: both;
+}
+
+/* Navbar */
+#navbar .logo {
+  font-size: 2.3rem;
+  float: left;
+  padding-top: 10px;
+  padding-bottom: 30px;
+}
+
+#navbar h1 a {
+  color: #fda94f;
+}
+
+#navbar ul {
+  float: right;
+  list-style: none;
+}
+
+#navbar ul li {
+  float: left;
+}
+
+#navbar ul li a {
+  display: block;
+  padding: 20px;
+  text-align: center;
+}
+
+#navbar ul li a.current,
+#navbar ul li a:hover {
+  color: #fda94f;
+}
+
+/* Showcase */
+#showcase {
+  background: url('../img/showcase.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding: 190px 60px;
+  height: 600px;
+  text-align: center;
+}
+
+#showcase h1,
+#showcase p {
+  padding-bottom: 20px;
+}
+
+#showcase h1 {
+  text-transform: uppercase;
+  font-weight: lighter;
+}
+
+/* Reservation */
+#reservation {
+  margin-bottom: 20px;
+}
+
+#reservation h2 {
+  float: left;
+  margin-left: 200px;
+  margin-top: 10px;
+  font-weight: lighter;
+  color: #4d4d4d;
+}
+
+#reservation a {
+  float: right;
+  margin-right: 120px;
+}
+
+/* Features */
+#features .features-1 {
+  background: url('../img/sencilla.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+#features .features-2 {
+  background: url('../img/doble.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+#features .features-3 {
+  background: url('../img/suite.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+/* About */
+#about {
+  background: #fda94f;
+}
+
+#about .about-content {
+  float: left;
+  width: 50%;
+  padding-right: 20px;
+}
+
+#about .about-content h1 {
+  font-weight: lighter;
+  padding-bottom: 20px;
+}
+
+#about .about-img {
+  float: right;
+  width: 50%;
+}
+
+#about .about-img img {
+  width: 100%;
+}
+
+/* Testimonials */
+#testimonial {
+  background: url('../img/testimonials.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  height: 450px;
+}
+
+#testimonial h2{
+  font-weight: lighter;
+  padding-bottom: 20px;
+}
+
+.testimonial-content {
+  background: rgb(77, 77, 77, 0.8);
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+.testimonial-content img{
+  float: left;
+  height: 50px;
+  border-radius: 50%;
+}
+
+/* Contact */
+#contact {
+  color: #4d4d4d;
+}
+
+#contact h1 {
+  padding-bottom: 40px;
+  font-weight: lighter;
+}
+
+#contact label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+#contact input,
+#contact textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+}
+
+/* Features Contact */
+#features-contact .location {
+  background: url('../img/contact-feature-1.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#features-contact .phone {
+  background: url('../img/contact-feature-2.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#features-contact .email {
+  background: url('../img/contact-feature-3.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+/* Footer */
+#mainfooter {
+  text-align: center;
+  color: #4d4d4d;
+}
+
+
+/* ----------     LOGIN     ----------*/
+
+.caja{
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.container2{
+  position: relative;
+  max-width: 430px;
+  width: 100%;
+  background: #fda94f;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.8);
+  overflow: hidden;
+  margin: 0 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.container2 .forms{
+  display: flex;
+  align-items: center;
+  height: 440px;
+  width: 200%;
+  transition: height 0.2s ease;
+}
+
+
+.container2 .form{
+  width: 50%;
+  padding: 30px;
+  background-color: #fff;
+  transition: margin-left 0.18s ease;
+}
+
+.container2.active .login{
+  margin-left: -50%;
+  opacity: 0;
+  transition: margin-left 0.18s ease, opacity 0.15s ease;
+}
+
+.container2 .signup{
+  opacity: 0;
+  transition: opacity 0.09s ease;
+}
+.container2.active .signup{
+  opacity: 1;
+  transition: opacity 0.2s ease;
+}
+
+.container2.active .forms{
+  height: 600px;
+}
+.container2 .form .title{
+  position: relative;
+  color: #fda94f;
+  font-size: 27px;
+  font-weight: 600;
+}
+
+.form .title::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 30px;
+  background-color: #4070f4;
+  border-radius: 25px;
+}
+
+.form .input-field{
+  position: relative;
+  height: 50px;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.input-field input{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  padding: 0 35px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  border-bottom: 2px solid #ccc;
+  border-top: 2px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.input-field input:is(:focus, :valid){
+  border-bottom-color: #4070f4;
+}
+
+.input-field i{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+  font-size: 23px;
+  transition: all 0.2s ease;
+}
+
+.input-field input:is(:focus, :valid) ~ i{
+  color: #4070f4;
+}
+
+.input-field i.icon{
+  left: 0;
+}
+.input-field i.showHidePw{
+  right: 0;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.form .checkbox-text{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.checkbox-text .checkbox-content{
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-content input{
+  margin: 0 8px -2px 4px;
+  accent-color: #4070f4;
+}
+
+.form .text{
+  color: #333;
+  font-size: 14px;
+}
+
+.form a.text{
+  color: #4070f4;
+  text-decoration: none;
+}
+.form a:hover{
+  text-decoration: underline;
+}
+
+.form .button{
+  margin-top: 35px;
+}
+
+.form .button input{
+  border: none;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  border-radius: 6px;
+  background-color: #4070f4;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.button input:hover{
+  background-color: #265df2;
+}
+
+.form .login-signup{
+  margin-top: 30px;
+  text-align: center;
+}
+
+
+/* Reservas */
+#reservations {
+  color: #4d4d4d;
+}
+
+#reservations h1 {
+  padding-bottom: 40px;
+  font-weight: lighter;
+}
+
+#reservations label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+#reservations input,
+#reservations textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+}
+.select{
+  width: 100%;
+  height: 40px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.caja2{
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.container3{
+  position: relative;
+  max-width: 430px;
+  width: 100%;
+  background: #fda94f;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.8);
+  overflow: hidden;
+  margin: 0 20px;
+  align-items: center;
+  justify-content: center;
+}
+
