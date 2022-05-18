@@ -111,7 +111,6 @@ module.exports.models = {
    * (For production configuration, see `config/env/production.js`.)          *
    *                                                                          *
    ***************************************************************************/
-  connection: "sailsMSSQLServer",
 
   cascadeOnDestroy: true,
 };

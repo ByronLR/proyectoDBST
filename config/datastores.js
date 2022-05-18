@@ -13,6 +13,7 @@
  * https://sailsjs.com/config/datastores
  */
 
+const local = require("./local");
 module.exports.datastores = {
   /***************************************************************************
    *                                                                          *
@@ -45,13 +46,7 @@ module.exports.datastores = {
      *    (See https://sailsjs.com/config/datastores for help.)                 *
      *                                                                          *
      ***************************************************************************/
-    // adapter: 'sails-mysql',
-    // url: 'mysql://user:password@host:port/database',
     adapter: "sails-sqlserver",
-    user: "username",
-    password: "password",
-    host: "host",
-    port: 1433,
-    database: "database",
+    url: `mssql://sa:${local.MSSQL_PASSWORD}@localhost/milaneso`,
   },
 };
