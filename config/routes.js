@@ -18,7 +18,8 @@ module.exports.routes = {
    *                                                                          *
    ***************************************************************************/
 
-  "/login": function (req, res) {
+  "POST /login": function (req, res) {
+    console.log("Body", req.body);
     return res.ok({ message: "Login succeded..." });
   },
   /***************************************************************************
