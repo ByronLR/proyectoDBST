@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles/style.css">
-  <link rel="stylesheet" media="screen and (max-width:768px)" href="styles/mobile.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" media="screen and (max-width:768px)" href="css/mobile.css">
   <title>Hotel Milaneso | Contact</title>
 </head>
 <body>
@@ -14,6 +14,7 @@
       <div class="container">
         <h1 class="logo"><a href="index2.html">Hotel Milaneso</a></h1>
         <ul>
+          <li><a href="MisReservas.html">Mis Reservas</a></li>
           <li><a href="reservas.html" class="current">Reservas</a></li>
           <li><a href="index2.html">Inicio</a></li>
           <li><a href="about2.html">Nosotros</a></li>
@@ -32,14 +33,14 @@
         <label for="start">Start date:</label>
 
         <input type="date" id="start" name="trip-start"
-        value="2020-04-22"
-        min="2022-04-22" max="2023-12-31">
+        value="2020-05-12"
+        min="2022-05-12" max="2023-12-31">
 
        <label for="start">Final date:</label>
 
        <input type="date" id="End" name="trip-end"
-              value="2020-04-22"
-              min="2022-04-22" max="2023-12-31">
+              value="2020-05-12"
+              min="2022-05-12" max="2023-12-31">
        
         
         <label for="hab">Tipo de Habitación:</label>
@@ -48,51 +49,16 @@
             <option value="1">Habitación Sencilla</option>
             <option value="2">Habitación Doble</option>
             <option value="3">Habitación junior suite</option>
-        </select>
-        
+        </select>     
+
+        <label for="start">SubTotal:</label>
+          <a href="LogIn.html" class="btn btn-dark">Reservar</a>
+          
 
     </div>
   </section>  
 
-  <div class="container3">
-    <div class="cotiza">
-       <div class="form login">
-        <span class="title">Iniciar Sesión</span>
-
-        <form action="#">
-            <div class="input-field">
-                <input type="text" placeholder="E-mail" required>
-                <i class="uil uil-envelope icon"></i>
-            </div>
-            <div class="input-field">
-                <input type="password" class="password" placeholder="Contraseña" required>
-                <i class="uil uil-lock icon"></i>
-                <i class="uil uil-eye-slash showHidePw"></i>
-            </div>
-
-            <div class="checkbox-text">
-                <div class="checkbox-content">
-                    <input type="checkbox" id="logCheck">
-                    <label for="logCheck" class="text">Recordarme</label>
-                </div>
-                
-                <a href="#" class="text">¿Olvidaste tu contraseña?</a>
-            </div>
-
-            <div class="input-field button">
-                <a href="index2.html"><input type="button" value="Iniciar Sesión"></a>
-            </div>
-        </form>
-
-        <div class="login-signup">
-            <span class="text">¿No tienes una cuenta?
-                <a href="#" class="text signup-link">Registrarse ahora</a>
-            </span>
-        </div>
-    </div>
-            
-        
-    </div>
+  
 </div>
        
     </div>
