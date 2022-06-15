@@ -14,6 +14,7 @@
  */
 
 const local = require("./local");
+
 module.exports.datastores = {
   /***************************************************************************
    *                                                                          *
@@ -47,6 +48,6 @@ module.exports.datastores = {
      *                                                                          *
      ***************************************************************************/
     adapter: "sails-sqlserver",
-    url: `mssql://sa:${local.MSSQL_PASSWORD}@localhost/milaneso`,
+    url: `mssql://${local.MSSQL_USER}:${local.MSSQL_PASSWORD}@localhost/milaneso`,
   },
 };

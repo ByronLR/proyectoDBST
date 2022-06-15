@@ -18,10 +18,15 @@ module.exports.routes = {
    *                                                                          *
    ***************************************************************************/
 
-  "POST /login": function (req, res) {
-    console.log("Body", req.body);
-    return res.ok({ message: "Login succeded..." });
+  "POST /login": {
+    controller: "UserController",
+    action: "login",
+    cors: {
+      allowOrigins: "*",
+      allowRequestHeaders: "Content-Type, Authorization",
+    },
   },
+
   /***************************************************************************
    *                                                                          *
    * More custom routes here...                                               *

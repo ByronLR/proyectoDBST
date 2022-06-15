@@ -6,23 +6,18 @@
  */
 
 module.exports = {
-
+  tableName: "USUARIO_TELEFONO",
   attributes: {
-    updatedAt: false,
-    createdAt: false,
     id: {
-      columnName: 'id_usuario',
-      type: 'number',
+      columnName: "id_usuario",
+      type: "number",
       allowNull: false,
     },
-  
-    telefono: {
-      type: 'string',
-      columnName: 'telefono',
-      columnType: 'varchar(11)'
-    }
-  
-},
 
+    phone: {
+      type: "string",
+      columnName: "telefono",
+      columnType: "varchar(11)",
+    },
+  },
 };
-

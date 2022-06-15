@@ -25,22 +25,103 @@
       media="screen and (max-width:768px)"
       href="styles/mobile.css"
     />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
 
     <!--<title>Login & Registration Form</title>-->
     <script>
-      function login() {
+      const showError = (message) => {
+        $(".alert-danger").toggleClass("show out");
+
+        setTimeout(() => {
+          $(".alert-danger").toggleClass("show out");
+        }, 2500);
+
+        document.getElementById("errorMessage").innerHTML = message;
+      };
+
+      const showSuccess = (message) => {
+        $(".alert-success").toggleClass("show out");
+
+        document.getElementById("successMessage").innerHTML = message;
+
+        setTimeout(() => {
+          $(".alert-success").toggleClass("show out");
+
+          window.location.href = "index2.html";
+        }, 2500);
+      };
+
+      const goSignIn = async () => {
         const email = document.getElementById("login-email").value,
           password = document.getElementById("login-password").value;
 
-        $.post(
-          "http://localhost:1337/login",
-          { email, password },
-          function (data) {
-            console.log("Data:", data);
-            window.location.href = "index2.html";
-          }
-        );
-      }
+        try {
+          const response = await axios({
+            method: "post",
+            url: "http://localhost:1337/login",
+            data: { email, password },
+          });
+
+          localStorage.setItem("isLoggedIn", email);
+
+          showSuccess(
+            response?.data?.message || "Sesión iniciada correctamente"
+          );
+        } catch (error) {
+          showError(
+            error?.response?.data?.message ||
+              "Ha ocurrido un error, intente nuevamente"
+          );
+        }
+      };
+
+      const goSignUp = async () => {
+        const email = document.getElementById("signUp-email").value,
+          password = document.getElementById("signUp-password").value,
+          name = document.getElementById("signUp-name").value,
+          lastName = document.getElementById("signUp-lastName").value,
+          secondLastName = document.getElementById(
+            "signUp-secondLastName"
+          ).value,
+          phone = document.getElementById("signUp-phone").value,
+          confirmPassword = document.getElementById(
+            "signUp-confirmPassword"
+          ).value;
+
+        if (password != confirmPassword)
+          return showError("Las contraseñas no coinciden");
+
+        try {
+          const response = await axios({
+            method: "post",
+            url: "http://localhost:1337/user",
+            data: { name, lastName, secondLastName, phone, email, password },
+          });
+
+          localStorage.setItem("isLoggedIn", email);
+
+          showSuccess(
+            response?.data?.message || "Usuario registrado correctamente"
+          );
+        } catch (error) {
+          showError(
+            error?.response?.data?.message ||
+              "Ha ocurrido un error, intente nuevamente"
+          );
+        }
+      };
     </script>
   </head>
   <body>
@@ -60,17 +141,26 @@
     <hr />
 
     <!-- LOGIN Form -->
+
+    <div class="alert alert-danger fade out">
+      <strong id="errorMessage"></strong>
+    </div>
+
+    <div class="alert alert-success fade out">
+      <strong id="successMessage"></strong>
+    </div>
+
     <div class="caja">
       <div class="container2">
         <div class="forms">
           <div class="form login">
             <span class="title">Iniciar Sesión</span>
 
-            <form action="#">
+            <form onsubmit="event.preventDefault(); goSignIn()">
               <div class="input-field">
                 <input
                   id="login-email"
-                  type="text"
+                  type="email"
                   placeholder="E-mail"
                   required
                 />
@@ -85,7 +175,6 @@
                   required
                 />
                 <i class="uil uil-lock icon"></i>
-                <i class="uil uil-eye-slash showHidePw"></i>
               </div>
 
               <div class="checkbox-text">
@@ -93,12 +182,10 @@
                   <input type="checkbox" id="logCheck" />
                   <label for="logCheck" class="text">Recordarme</label>
                 </div>
-
-                <a href="#" class="text">¿Olvidaste tu contraseña?</a>
               </div>
 
               <div class="input-field button">
-                <input type="button" value="Iniciar Sesión" onclick="login()" />
+                <input type="submit" value="Iniciar Sesión" />
               </div>
             </form>
 
@@ -114,25 +201,55 @@
           <div class="form signup">
             <span class="title">Registrarse</span>
 
-            <form action="#">
+            <form onsubmit="event.preventDefault(); goSignUp()">
               <div class="input-field">
-                <input type="text" placeholder="Nombre completo" required />
+                <input
+                  id="signUp-name"
+                  type="text"
+                  placeholder="Nombre"
+                  required
+                />
                 <i class="uil uil-user"></i>
               </div>
               <div class="input-field">
                 <input
+                  id="signUp-lastName"
                   type="text"
+                  placeholder="Apellido paterno"
+                  required
+                />
+                <i class="uil uil-users-alt"></i>
+              </div>
+              <div class="input-field">
+                <input
+                  id="signUp-secondLastName"
+                  type="text"
+                  placeholder="Apellido materno"
+                  required
+                />
+                <i class="uil uil-users-alt"></i>
+              </div>
+              <div class="input-field">
+                <input
+                  id="signUp-email"
+                  type="email"
                   placeholder="Correo electrónico / E-mail"
                   required
                 />
                 <i class="uil uil-envelope icon"></i>
               </div>
               <div class="input-field">
-                <input type="text" placeholder="Teléfono" required />
+                <input
+                  id="signUp-phone"
+                  type="text"
+                  placeholder="Teléfono"
+                  required
+                />
                 <i class="uil uil-phone icon"></i>
               </div>
               <div class="input-field">
                 <input
+                  id="signUp-password"
                   type="password"
                   class="password"
                   placeholder="Contraseña"
@@ -142,17 +259,18 @@
               </div>
               <div class="input-field">
                 <input
+                  id="signUp-confirmPassword"
                   type="password"
                   class="password"
                   placeholder="Confirmar contraseña"
                   required
                 />
                 <i class="uil uil-lock icon"></i>
-                <i class="uil uil-eye-slash showHidePw"></i>
+                <!-- <i class="uil uil-eye-slash showHidePw"></i> -->
               </div>
 
               <div class="input-field button">
-                <input type="button" value="Registrarse" />
+                <input type="submit" value="Registrarse" />
               </div>
             </form>
             <div class="login-signup">
@@ -170,7 +288,7 @@
     <div class="clr"></div>
 
     <footer id="mainfooter" class="py-30">
-      <p>&copy; 2020 Hotel Milaneso</p>
+      <p>&copy; 2022 Hotel Milaneso</p>
     </footer>
   </body>
 </html>
