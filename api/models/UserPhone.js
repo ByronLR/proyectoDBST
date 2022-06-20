@@ -13,7 +13,6 @@ module.exports = {
       type: "number",
       allowNull: false,
     },
-
     phone: {
       type: "string",
       columnName: "telefono",

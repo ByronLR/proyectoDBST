@@ -31,14 +31,6 @@ module.exports = {
       allowNull: false,
     },
 
-    price: {
-      type: "number",
-      columnType: "int",
-      required: true,
-      columnName: "precio_habitacion",
-      allowNull: false,
-    },
-
     stateCleaning: {
       type: "boolean",
       columnType: "bit",

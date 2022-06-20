@@ -7,7 +7,7 @@ function runTable() {
     dom: '<"dt-buttons"Bf><"clear">lirtp',
     paging: false,
     autoWidth: true,
-    columnDefs: [{ orderable: true, targets: 6 }],
+    columnDefs: [{ orderable: true, targets: 7 }],
     buttons: ["colvis", "excelHtml5", "print"],
   });
   //Add row button
@@ -129,7 +129,7 @@ function runTable() {
     $(this).on("click", async (evt) => {
       $this = $(this);
       var dtRow = $this.parents("tr");
-      if (confirm("¿Esta seguro que desea cancelar la reservación?")) {
+      if (confirm("¿Esta seguro que desea eliminar al usuario?")) {
         var table = $("#example").DataTable();
         table
           .row(dtRow[0].rowIndex - 1)
@@ -139,7 +139,7 @@ function runTable() {
         try {
           await axios({
             method: "delete",
-            url: `http://localhost:1337/booking/${this.value}`,
+            url: `http://localhost:1337/user/${this.value}`,
           });
         } catch (error) {}
       }

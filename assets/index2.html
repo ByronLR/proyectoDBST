@@ -6,6 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!--<link rel="preconnect" href="https://fonts.googleapis.com">-->
     <!--<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>-->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
       rel="stylesheet"
@@ -16,10 +31,24 @@
       media="screen and (max-width:768px)"
       href="styles/mobile.css"
     />
+
     <script>
       const isLoggedIn = localStorage.getItem("isLoggedIn");
 
       if (!isLoggedIn) window.location.href = "index.html";
+
+      const goLogOut = () => {
+        localStorage.removeItem("isLoggedIn");
+
+        $(".alert-success").toggleClass("show out");
+
+        document.getElementById("successMessage").innerHTML =
+          "Cerrando sesión, hasta pronto...";
+
+        setTimeout(() => {
+          window.location.href = "index.html";
+        }, 1500);
+      };
     </script>
     <title>Hotel Milaneso | Home</title>
   </head>
@@ -29,13 +58,20 @@
         <div class="container">
           <h1 class="logo"><a href="index2.html">Hotel Milaneso</a></h1>
           <ul>
-            <li><a href="reservas.html">Reservas</a></li>
             <li><a href="index2.html" class="current">Inicio</a></li>
+            <li><a href="Perfil.html">Perfil</a></li>
+            <li><a href="MisReservas.html">Mis Reservas</a></li>
+            <li><a href="reservas.html">Reservas</a></li>
             <li><a href="about2.html">Nosotros</a></li>
             <li><a href="contact2.html">Contacto</a></li>
-            <li><a href="index.html">Cerrar Sesión</a></li>
+            <li><a href="#" onclick="goLogOut()">Cerrar Sesión</a></li>
           </ul>
         </div>
+
+        <div class="alert alert-success fade out">
+          <strong id="successMessage"></strong>
+        </div>
+
         <div id="showcase" class="py-80">
           <div class="container">
             <h1>Bienvenido al hotel Milaneso</h1>
@@ -49,7 +85,6 @@
         </div>
       </nav>
     </header>
-
     <section id="reservation" class="py-30">
       <div class="container">
         <h2>Haz una reservación hoy mismo!</h2>
@@ -97,7 +132,7 @@
     <div class="clr"></div>
 
     <footer id="mainfooter" class="py-30">
-      <p>&copy; 2020 Hotel Milaneso</p>
+      <p>&copy; 2022 Hotel Milaneso</p>
     </footer>
   </body>
 </html>

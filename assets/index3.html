@@ -2,11 +2,25 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!--<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!--<link rel="preconnect" href="https://fonts.googleapis.com">-->
     <!--<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>-->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
       rel="stylesheet"
@@ -17,10 +31,24 @@
       media="screen and (max-width:768px)"
       href="styles/mobile.css"
     />
+
     <script>
       const isLoggedIn = localStorage.getItem("isLoggedIn");
 
-      if (isLoggedIn) window.location.href = "index2.html";
+      if (!isLoggedIn) window.location.href = "index.html";
+
+      const goLogOut = () => {
+        localStorage.removeItem("isLoggedIn");
+
+        $(".alert-success").toggleClass("show out");
+
+        document.getElementById("successMessage").innerHTML =
+          "Cerrando sesión, hasta pronto...";
+
+        setTimeout(() => {
+          window.location.href = "index.html";
+        }, 1500);
+      };
     </script>
     <title>Hotel Milaneso | Home</title>
   </head>
@@ -28,14 +56,20 @@
     <header>
       <nav id="navbar" class="py-30">
         <div class="container">
-          <h1 class="logo"><a href="index.html">Hotel Milaneso</a></h1>
+          <h1 class="logo"><a href="index3.html">Hotel Milaneso Admin</a></h1>
           <ul>
-            <li><a href="index.html" class="current">Inicio</a></li>
-            <li><a href="about.html">Nosotros</a></li>
-            <li><a href="contact.html">Contacto</a></li>
-            <li><a href="LogIn.html">Ingresar</a></li>
+            <li><a href="index3.html" class="current">Inicio</a></li>
+            <li><a href="Perfil2.html">Perfil</a></li>
+            <li><a href="reservaciones.html">Reservas</a></li>
+            <li><a href="usuarios.html">Usuarios</a></li>
+            <li><a href="#" onclick="goLogOut()">Cerrar Sesión</a></li>
           </ul>
         </div>
+
+        <div class="alert alert-success fade out">
+          <strong id="successMessage"></strong>
+        </div>
+
         <div id="showcase" class="py-80">
           <div class="container">
             <h1>Bienvenido al hotel Milaneso</h1>
@@ -49,11 +83,10 @@
         </div>
       </nav>
     </header>
-
     <section id="reservation" class="py-30">
       <div class="container">
         <h2>Haz una reservación hoy mismo!</h2>
-        <a href="LogIn.html" class="btn btn-dark">Reservar</a>
+        <a href="reservas.html" class="btn btn-dark">Reservar</a>
       </div>
     </section>
 

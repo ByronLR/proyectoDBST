@@ -10,6 +10,27 @@ function runTable() {
     columnDefs: [{ orderable: true, targets: 6 }],
     buttons: ["colvis", "excelHtml5", "print"],
   });
+  $("#example_filter").on("keyup", "input", function () {
+    var table = $("#example").DataTable();
+
+    var data = table.rows({ page: "current" }).data();
+
+    costTotal = 0;
+
+    countSell = 0;
+    for (var i = 0; i < data.length; i++) {
+      const e = data[i],
+        parcialCost = Number(e[6].replace(".00 MXN", ""));
+      costTotal += parcialCost;
+
+      countSell++;
+    }
+
+    document.getElementById("sellTotal").value = costTotal + ".00 MXN";
+
+    document.getElementById("countSell").value = countSell;
+  });
+
   //Add row button
   $(".dt-add").each(function () {
     $(this).on("click", function (evt) {

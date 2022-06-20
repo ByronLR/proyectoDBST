@@ -40,6 +40,8 @@
       let bookings = [],
         services = [],
         cost = 0,
+        costTotal = 0,
+        countSell = 0,
         currentEdit;
 
       const goLogOut = () => {
@@ -72,7 +74,7 @@
         try {
           const response = await axios({
             method: "get",
-            url: `http://localhost:1337/booking/${isLoggedIn}`,
+            url: `http://localhost:1337/booking`,
           });
 
           bookings = response.data;
@@ -90,8 +92,13 @@
               if (serviceFound) costServices += serviceFound.cost;
             }
 
+            costTotal += e.cost + costServices;
+
+            countSell++;
+
             const tr = document.createElement("tr");
             tr.innerHTML = `  <tr>
+          <td style="text-align: center; width: 100px">${e.user?.email}</td>
           <td style="text-align: center; width: 100px">${e.room?.id}</td>
           <td style="text-align: center; width: 100px">${
             e.room?.type?.name
@@ -112,17 +119,6 @@
             e.cost + costServices
           }.00 MXN</td>
           <td style="text-align: center; width: 100px">
-            <button value="${e.id}" 
-              type="button"
-              class="btn btn-primary btn-xs dt-edit"
-              style="margin-right: 16px"
-              ${new Date() >= new Date(e.startDate) ? "disabled" : ""}
-            >
-              <span
-                class="glyphicon glyphicon-pencil"
-                aria-hidden="true"
-              ></span>
-            </button>
             <button value="${e.id}"
              type="button" class="btn btn-danger btn-xs dt-delete">
               <span
@@ -136,6 +132,8 @@
             table.appendChild(tr);
           }
           runTable();
+          document.getElementById("sellTotal").value = costTotal + ".00 MXN";
+          document.getElementById("countSell").value = countSell;
         } catch (error) {}
       };
 
@@ -216,19 +214,26 @@
     <header>
       <nav id="navbar" class="py-30">
         <div class="container">
-          <h1 class="logo"><a href="index2.html">Hotel Milaneso</a></h1>
+          <h1 class="logo"><a href="index3.html">Hotel Milaneso Admin</a></h1>
           <ul>
-            <li><a href="Perfil.html">Perfil</a></li>
-            <li><a href="MisReservas.html" class="current">MisReservas</a></li>
-            <li><a href="reservas.html">Reservas</a></li>
-            <li><a href="index2.html">Inicio</a></li>
-            <li><a href="about2.html">Nosotros</a></li>
-            <li><a href="contact2.html">Contacto</a></li>
+            <li><a href="index3.html">Inicio</a></li>
+            <li><a href="Perfil2.html">Perfil</a></li>
+            <li><a href="reservaciones.html" class="current">Reservas</a></li>
+            <li><a href="usuarios.html">Usuarios</a></li>
             <li><a href="#" onclick="goLogOut()">Cerrar Sesión</a></li>
           </ul>
         </div>
       </nav>
     </header>
+    <hr />
+    <div class="container" style="width: 30%">
+      <label for="start">Numero de ventas:</label>
+      <input id="countSell" value="0" disabled />
+    </div>
+    <div class="container" style="width: 30%">
+      <label for="start">Venta total:</label>
+      <input id="sellTotal" value="0.00 MXN" disabled />
+    </div>
     <hr />
 
     <table
@@ -239,13 +244,14 @@
     >
       <thead>
         <tr>
+          <th style="text-align: center; width: 100px">Usuario</th>
           <th style="text-align: center; width: 100px">Habitación</th>
           <th style="text-align: center; width: 100px">Tipo de habitación</th>
           <th style="text-align: center; width: 100px">Apartado el día</th>
           <th style="text-align: center; width: 100px">Fecha Inicio</th>
           <th style="text-align: center; width: 100px">Fecha Final</th>
           <th style="text-align: center; width: 100px">Costo</th>
-          <th style="text-align: center; width: 100px">Modificar/Cancelar</th>
+          <th style="text-align: center; width: 100px">Cancelar</th>
         </tr>
       </thead>
       <tbody id="bookingTable"></tbody>
@@ -308,6 +314,6 @@
     <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
     <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="js/script2.js"></script>
+    <script src="js/script3.js"></script>
   </body>
 </html>

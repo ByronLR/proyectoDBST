@@ -1,18 +1,16 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
 /* Reset */
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 /* Main Styling */
 html,
 body {
-  
   color: #fff;
   height: 100vh;
   /*display: flex;*/
@@ -20,10 +18,18 @@ body {
   justify-content: center;
 }
 
-h1 {font-size: 2.441rem;}
-h2 {font-size: 1.953rem;}
-h3 {font-size: 1.563rem;}
-h4 {font-size: 1.25rem;}
+h1 {
+  font-size: 2.441rem;
+}
+h2 {
+  font-size: 1.953rem;
+}
+h3 {
+  font-size: 1.563rem;
+}
+h4 {
+  font-size: 1.25rem;
+}
 
 h1,
 h2,
@@ -80,9 +86,15 @@ hr {
   background: #737373;
 }
 
-.py-80 {padding: 80px 0;}
-.py-50 {padding: 50px 0;}
-.py-30 {padding: 30px 0;}
+.py-80 {
+  padding: 80px 0;
+}
+.py-50 {
+  padding: 50px 0;
+}
+.py-30 {
+  padding: 30px 0;
+}
 
 .box {
   float: left;
@@ -96,8 +108,6 @@ hr {
   padding-bottom: 20px;
   text-transform: uppercase;
 }
-
-
 
 .clr {
   clear: both;
@@ -137,7 +147,7 @@ hr {
 
 /* Showcase */
 #showcase {
-  background: url('../img/showcase.jpg');
+  background: url("../img/showcase.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -176,19 +186,19 @@ hr {
 
 /* Features */
 #features .features-1 {
-  background: url('../img/sencilla.jpg');
+  background: url("../img/sencilla.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 #features .features-2 {
-  background: url('../img/doble.jpg');
+  background: url("../img/doble.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 #features .features-3 {
-  background: url('../img/suite.jpg');
+  background: url("../img/suite.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -221,7 +231,7 @@ hr {
 
 /* Testimonials */
 #testimonial {
-  background: url('../img/testimonials.jpg');
+  background: url("../img/testimonials.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -229,7 +239,7 @@ hr {
   height: 450px;
 }
 
-#testimonial h2{
+#testimonial h2 {
   font-weight: lighter;
   padding-bottom: 20px;
 }
@@ -241,7 +251,7 @@ hr {
   border-radius: 5px;
 }
 
-.testimonial-content img{
+.testimonial-content img {
   float: left;
   height: 50px;
   border-radius: 50%;
@@ -272,21 +282,21 @@ hr {
 
 /* Features Contact */
 #features-contact .location {
-  background: url('../img/contact-feature-1.jpg');
+  background: url("../img/contact-feature-1.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 
 #features-contact .phone {
-  background: url('../img/contact-feature-2.jpg');
+  background: url("../img/contact-feature-2.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 
 #features-contact .email {
-  background: url('../img/contact-feature-3.jpg');
+  background: url("../img/contact-feature-3.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -298,10 +308,9 @@ hr {
   color: #4d4d4d;
 }
 
-
 /* ----------     LOGIN     ----------*/
 
-.caja{
+.caja {
   max-width: 100%;
   display: flex;
   justify-content: center;
@@ -309,7 +318,7 @@ hr {
   padding-bottom: 20px;
 }
 
-.container2{
+.container2 {
   position: relative;
   max-width: 430px;
   width: 100%;
@@ -324,7 +333,7 @@ hr {
   justify-content: center;
 }
 
-.container2 .forms{
+.container2 .forms {
   display: flex;
   align-items: center;
   height: 440px;
@@ -332,41 +341,40 @@ hr {
   transition: height 0.2s ease;
 }
 
-
-.container2 .form{
+.container2 .form {
   width: 50%;
   padding: 30px;
   background-color: #fff;
   transition: margin-left 0.18s ease;
 }
 
-.container2.active .login{
+.container2.active .login {
   margin-left: -50%;
   opacity: 0;
   transition: margin-left 0.18s ease, opacity 0.15s ease;
 }
 
-.container2 .signup{
+.container2 .signup {
   opacity: 0;
   transition: opacity 0.09s ease;
 }
-.container2.active .signup{
+.container2.active .signup {
   opacity: 1;
   transition: opacity 0.2s ease;
 }
 
-.container2.active .forms{
+.container2.active .forms {
   height: 600px;
 }
-.container2 .form .title{
+.container2 .form .title {
   position: relative;
   color: #fda94f;
   font-size: 27px;
   font-weight: 600;
 }
 
-.form .title::before{
-  content: '';
+.form .title::before {
+  content: "";
   position: absolute;
   left: 0;
   bottom: 0;
@@ -376,14 +384,14 @@ hr {
   border-radius: 25px;
 }
 
-.form .input-field{
+.form .input-field {
   position: relative;
   height: 50px;
   width: 100%;
   margin-top: 30px;
 }
 
-.input-field input{
+.input-field input {
   position: absolute;
   height: 100%;
   width: 100%;
@@ -396,11 +404,11 @@ hr {
   transition: all 0.2s ease;
 }
 
-.input-field input:is(:focus, :valid){
+.input-field input:is(:focus, :valid) {
   border-bottom-color: #4070f4;
 }
 
-.input-field i{
+.input-field i {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -409,54 +417,54 @@ hr {
   transition: all 0.2s ease;
 }
 
-.input-field input:is(:focus, :valid) ~ i{
+.input-field input:is(:focus, :valid) ~ i {
   color: #4070f4;
 }
 
-.input-field i.icon{
+.input-field i.icon {
   left: 0;
 }
-.input-field i.showHidePw{
+.input-field i.showHidePw {
   right: 0;
   cursor: pointer;
   padding: 10px;
 }
 
-.form .checkbox-text{
+.form .checkbox-text {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-top: 20px;
 }
 
-.checkbox-text .checkbox-content{
+.checkbox-text .checkbox-content {
   display: flex;
   align-items: center;
 }
 
-.checkbox-content input{
+.checkbox-content input {
   margin: 0 8px -2px 4px;
   accent-color: #4070f4;
 }
 
-.form .text{
+.form .text {
   color: #333;
   font-size: 14px;
 }
 
-.form a.text{
+.form a.text {
   color: #4070f4;
   text-decoration: none;
 }
-.form a:hover{
+.form a:hover {
   text-decoration: underline;
 }
 
-.form .button{
+.form .button {
   margin-top: 35px;
 }
 
-.form .button input{
+.form .button input {
   border: none;
   color: #fff;
   font-size: 17px;
@@ -468,15 +476,14 @@ hr {
   transition: all 0.3s ease;
 }
 
-.button input:hover{
+.button input:hover {
   background-color: #265df2;
 }
 
-.form .login-signup{
+.form .login-signup {
   margin-top: 30px;
   text-align: center;
 }
-
 
 /* Reservas */
 #reservations {
@@ -500,7 +507,30 @@ hr {
   margin-bottom: 10px;
   border: 1px solid #ddd;
 }
-.select{
+
+#actres {
+  color: #4d4d4d;
+}
+
+#actres h1 {
+  padding-bottom: 40px;
+  font-weight: lighter;
+}
+
+#actres label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+#actres input,
+#actres textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+}
+
+.select {
   width: 100%;
   height: 40px;
   border: 1px solid #ddd;
@@ -508,7 +538,7 @@ hr {
   margin-bottom: 10px;
 }
 
-.caja2{
+.caja2 {
   max-width: 100%;
   display: flex;
   justify-content: center;
@@ -516,7 +546,7 @@ hr {
   padding-bottom: 20px;
 }
 
-.container3{
+.container3 {
   position: relative;
   max-width: 430px;
   width: 100%;
@@ -531,17 +561,16 @@ hr {
   justify-content: center;
 }
 
-
-.caja5{
+.caja5 {
   max-width: 100%;
   display: flex;
-  height: auto  ;
+  height: auto;
   justify-content: center;
   padding-top: 20px;
   padding-bottom: 20px;
 }
 
-.container5{
+.container5 {
   position: relative;
   max-width: 430px;
   width: 100%;
@@ -557,41 +586,40 @@ hr {
   justify-content: center;
 }
 
-.container5 .forms{
+.container5 .forms {
   display: flex;
   align-items: center;
-  height: 750px;
+  height: 600px;
   width: 200%;
   transition: height 0.2s ease;
 }
 
-
-.container5 .form{
+.container5 .form {
   width: 50%;
   padding: 30px;
   background-color: #fff;
   transition: margin-left 0.18s ease;
 }
 
-.container5.active .login{
+.container5.active .login {
   margin-left: -50%;
   opacity: 0;
   transition: margin-left 0.18s ease, opacity 0.15s ease;
 }
 
-.container5 .signup{
+.container5 .signup {
   opacity: 0;
   transition: opacity 0.09s ease;
 }
-.container5.active .signup{
+.container5.active .signup {
   opacity: 1;
   transition: opacity 0.2s ease;
 }
 
-.container5.active .forms{
+.container5.active .forms {
   height: 600px;
 }
-.container5 .form .title{
+.container5 .form .title {
   position: relative;
   color: #fda94f;
   font-size: 27px;

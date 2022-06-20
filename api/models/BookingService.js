@@ -14,8 +14,8 @@ module.exports = {
       allowNull: false,
       required: true,
     },
-    userId: {
-      columnName: "id_usuario",
+    serviceId: {
+      columnName: "id_servicio",
       type: "number",
       allowNull: false,
       required: true,

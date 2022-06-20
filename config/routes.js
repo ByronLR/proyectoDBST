@@ -18,6 +18,78 @@ module.exports.routes = {
    *                                                                          *
    ***************************************************************************/
 
+  "GET /user": {
+    controller: "UserController",
+    action: "getAll",
+    cors: {
+      allowOrigins: "*",
+      allowRequestHeaders: "Content-Type, Authorization",
+    },
+  },
+
+  "GET /user/*": {
+    controller: "UserController",
+    action: "get",
+    cors: {
+      allowOrigins: "*",
+      allowRequestHeaders: "Content-Type, Authorization",
+    },
+  },
+
+  "POST /user": {
+    controller: "UserController",
+    action: "create",
+    cors: {
+      allowOrigins: "*",
+      allowRequestHeaders: "Content-Type, Authorization",
+    },
+  },
+
+  "put /user/*": {
+    controller: "UserController",
+    action: "update",
+    cors: {
+      allowOrigins: "*",
+      allowRequestHeaders: "Content-Type, Authorization",
+    },
+  },
+
+  "GET /booking": {
+    controller: "BookingController",
+    action: "getAll",
+    cors: {
+      allowOrigins: "*",
+      allowRequestHeaders: "Content-Type, Authorization",
+    },
+  },
+
+  "GET /booking/*": {
+    controller: "BookingController",
+    action: "get",
+    cors: {
+      allowOrigins: "*",
+      allowRequestHeaders: "Content-Type, Authorization",
+    },
+  },
+
+  "POST /booking/*": {
+    controller: "BookingController",
+    action: "create",
+    cors: {
+      allowOrigins: "*",
+      allowRequestHeaders: "Content-Type, Authorization",
+    },
+  },
+
+  "PUT /booking/:id": {
+    controller: "BookingController",
+    action: "update",
+    cors: {
+      allowOrigins: "*",
+      allowRequestHeaders: "Content-Type, Authorization",
+    },
+  },
+
   "POST /login": {
     controller: "UserController",
     action: "login",

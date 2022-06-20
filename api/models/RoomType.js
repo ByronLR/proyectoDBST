@@ -8,8 +8,6 @@
 module.exports = {
   tableName: "TIPOS_HABITACIONES",
   attributes: {
-    updatedAt: false,
-    createdAt: false,
     id: {
       type: "number",
       columnType: "int",
@@ -22,6 +20,12 @@ module.exports = {
       columnName: "nombre_tipo",
       type: "string",
       columnType: "varchar(50)",
+      required: true,
+    },
+    price: {
+      columnName: "precio_habitacion",
+      type: "number",
+      columnType: "int",
       required: true,
     },
   },

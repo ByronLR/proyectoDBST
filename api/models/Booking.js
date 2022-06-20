@@ -36,7 +36,7 @@ module.exports = {
       type: "string",
       columnType: "datetime",
       columnName: "fecha_reserva",
-      required: true,
+      required: false,
     },
 
     finalState: {
